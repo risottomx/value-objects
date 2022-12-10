@@ -1,9 +1,12 @@
 ## Table of Contents
 
+- [Installing](#installing)
 - Value Objects
   - [StringValueObject](#stringvalueobject)
   - [NumberValueObject](#numbervalueobject)
-- [Exceptions](#StringValueObject)
+  - [UUID](#uuid)
+  - [Enum](#enum)
+  - [Custom Value Objects](#custom-value-objects)
 
 ## Installing
 
@@ -30,7 +33,7 @@ const name = new ProductName('foo');
 console.log(name.value); // foo
 ```
 
-equals()
+`equals()`
 
 ```js
 const name1 = new ProductName('foo');
@@ -54,7 +57,7 @@ const quantity = new ProductStockQuantity(24);
 console.log(quantity.value); // 24
 ```
 
-isBiggerThan()
+`isBiggerThan()`
 
 ```js
 const number1 = new ProductStockQuantity(4);
@@ -64,7 +67,7 @@ console.log(number1.isBiggerThan(number2)); // true
 console.log(number2.isBiggerThan(number1)); // false
 ```
 
-isLessThan()
+`isLessThan()`
 
 ```js
 const number1 = new ProductStockQuantity(2);
@@ -85,7 +88,7 @@ const uuid = new Uuid('d2362e93-8f8e-45ed-8154-28a43f70d551');
 console.log(uuid.value); // d2362e93-8f8e-45ed-8154-28a43f70d551
 ```
 
-random()
+`random()`
 
 ```js
 import { Uuid } from '@risotto/value-objects';

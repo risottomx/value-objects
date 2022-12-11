@@ -7,6 +7,8 @@
   - [UUID](#uuid)
   - [Enum](#enum)
   - [Custom Value Objects](#custom-value-objects)
+- [Primitives](#primitives)
+- [Exception](#exception)
 
 ## Installing
 
@@ -103,7 +105,7 @@ Initialize Enum value object
 
 ```js
 import { EnumValueObject } from '@risotto/value-objects';
-import { InvalidArgumentError } from '@risotto/value-objects/dist/exceptions';
+import { InvalidArgumentError } from '@risotto/value-objects/exceptions';
 
 enum Status {
   IN_STOCK = 'IN_STOCK',
@@ -122,7 +124,7 @@ export class ProductStatus extends EnumValueObject<Status> {
 }
 ```
 
-usage
+usage:
 
 ```js
 const status = new ProductStatus(Status.IN_STOCK);
@@ -132,3 +134,32 @@ console.log(status.value); // IN_STOCK
 ## Custom Value Objects
 
 You can create your custom implementations by extending from any of the next classes: `StringValueObject`, `NumberValueObject`, `EnumValueObject`, `Uuid`, and `ValueObject`
+
+## Primitives
+
+With `Primitives` **type** you can get the primitive values of any `class` that extends from `ValueObject` abstract class
+
+i.e:
+
+```js
+import { Primitives } from "@risotto/value-objects/primitives";
+
+export class Product {
+  constructor(private id: ProductId, private name: ProductName) {}
+
+  toPrimitives(): Primitives<Product> {
+    return {
+      id: this.id.value,
+      name: this.name.value
+    }
+  }
+}
+```
+
+## Exception
+
+All exceptions thrown by Value Objects are instance of `InvalidArgumentError` and imports as follow:
+
+```js
+import { InvalidArgumentError } from '@risotto/value-objects/exceptions';
+```

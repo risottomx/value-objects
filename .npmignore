@@ -3,7 +3,9 @@
 /.vscode
 /dist
 /src
+/test
 
 .editorconfig
 .prettierrc
+.eslintrc
 tsconfig.json

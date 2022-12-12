@@ -1,0 +1,9 @@
+# compiled output
+/.github
+/.vscode
+/dist
+/src
+
+.editorconfig
+.prettierrc
+tsconfig.json

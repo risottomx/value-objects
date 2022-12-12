@@ -145,7 +145,7 @@ i.e:
 import { Primitives } from "@risotto/value-objects/primitives";
 
 export class Product {
-  constructor(private id: ProductId, private name: ProductName) {}
+  constructor(readonly id: ProductId, readonly name: ProductName) {}
 
   toPrimitives(): Primitives<Product> {
     return {

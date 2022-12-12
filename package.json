@@ -4,9 +4,6 @@
   "description": "Risotto library for value objects",
   "main": "index.js",
   "types": "index.d.js",
-  "files": [
-    "/"
-  ],
   "scripts": {
     "build": "tsc",
     "test": "jest",
@@ -16,11 +13,20 @@
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\""
   },
   "keywords": [
-    "softaurant",
-    "value-objects"
+    "risotto",
+    "value-objects",
+    "DDD",
+    "typescript"
   ],
   "author": "Pepe Flores",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoseFlores97/value-objects"
+  },
+  "dependencies": {
+    "uuid": "^9.0.0"
+  },
   "devDependencies": {
     "@types/jest": "^29.2.3",
     "@types/uuid": "^8.3.4",
@@ -53,8 +59,5 @@
     ],
     "coverageDirectory": "./coverage",
     "testEnvironment": "node"
-  },
-  "dependencies": {
-    "uuid": "^9.0.0"
   }
 }

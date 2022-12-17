@@ -17,6 +17,8 @@ type ValueObjectValue<T> = {
     ? Pick<T[key][number], 'value'>['value'][]
     : T[key] extends Array<Object>
     ? Primitives<T[key][number]>[]
+    : T[key] extends Date
+    ? Date
     : T[key] extends Object
     ? Primitives<T[key]>
     : T[key];
